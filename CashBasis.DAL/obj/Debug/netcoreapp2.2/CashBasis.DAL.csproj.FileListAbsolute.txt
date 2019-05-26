@@ -1,0 +1,14 @@
+E:\Proekti\CashBasis\CashBasis\CashBasis.DAL\bin\Debug\netcoreapp2.2\CashBasis.DAL.deps.json
+E:\Proekti\CashBasis\CashBasis\CashBasis.DAL\bin\Debug\netcoreapp2.2\CashBasis.DAL.dll
+E:\Proekti\CashBasis\CashBasis\CashBasis.DAL\bin\Debug\netcoreapp2.2\CashBasis.DAL.pdb
+E:\Proekti\CashBasis\CashBasis\CashBasis.DAL\obj\Debug\netcoreapp2.2\CashBasis.DAL.csproj.CoreCompileInputs.cache
+E:\Proekti\CashBasis\CashBasis\CashBasis.DAL\obj\Debug\netcoreapp2.2\CashBasis.DAL.AssemblyInfoInputs.cache
+E:\Proekti\CashBasis\CashBasis\CashBasis.DAL\obj\Debug\netcoreapp2.2\CashBasis.DAL.AssemblyInfo.cs
+E:\Proekti\CashBasis\CashBasis\CashBasis.DAL\obj\Debug\netcoreapp2.2\CashBasis.DAL.dll
+E:\Proekti\CashBasis\CashBasis\CashBasis.DAL\obj\Debug\netcoreapp2.2\CashBasis.DAL.pdb
+E:\Proekti\CashBasis\CashBasis\CashBasis.DAL\bin\Debug\netcoreapp2.2\CashBasis.Entities.dll
+E:\Proekti\CashBasis\CashBasis\CashBasis.DAL\bin\Debug\netcoreapp2.2\CashBasis.Entities.pdb
+E:\Proekti\CashBasis\CashBasis\CashBasis.DAL\obj\Debug\netcoreapp2.2\CashBasis.DAL.csprojAssemblyReference.cache
+E:\Proekti\CashBasis\CashBasis\CashBasis.DAL\obj\Debug\netcoreapp2.2\CashBasis.DAL.csproj.CopyComplete
+E:\Proekti\CashBasis\CashBasis\CashBasis.DAL\bin\Debug\netcoreapp2.2\CashBasis.DAL.runtimeconfig.json
+E:\Proekti\CashBasis\CashBasis\CashBasis.DAL\bin\Debug\netcoreapp2.2\CashBasis.DAL.runtimeconfig.dev.json

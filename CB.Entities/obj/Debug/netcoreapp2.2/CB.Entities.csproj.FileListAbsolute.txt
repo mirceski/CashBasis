@@ -1,0 +1,9 @@
+E:\Proekti\CashBasis\CashBasis\CB.Entities\bin\Debug\netcoreapp2.2\CB.Entities.deps.json
+E:\Proekti\CashBasis\CashBasis\CB.Entities\bin\Debug\netcoreapp2.2\CB.Entities.dll
+E:\Proekti\CashBasis\CashBasis\CB.Entities\bin\Debug\netcoreapp2.2\CB.Entities.pdb
+E:\Proekti\CashBasis\CashBasis\CB.Entities\obj\Debug\netcoreapp2.2\CB.Entities.csprojAssemblyReference.cache
+E:\Proekti\CashBasis\CashBasis\CB.Entities\obj\Debug\netcoreapp2.2\CB.Entities.csproj.CoreCompileInputs.cache
+E:\Proekti\CashBasis\CashBasis\CB.Entities\obj\Debug\netcoreapp2.2\CB.Entities.AssemblyInfoInputs.cache
+E:\Proekti\CashBasis\CashBasis\CB.Entities\obj\Debug\netcoreapp2.2\CB.Entities.AssemblyInfo.cs
+E:\Proekti\CashBasis\CashBasis\CB.Entities\obj\Debug\netcoreapp2.2\CB.Entities.dll
+E:\Proekti\CashBasis\CashBasis\CB.Entities\obj\Debug\netcoreapp2.2\CB.Entities.pdb

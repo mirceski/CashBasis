@@ -34,11 +34,11 @@ namespace CashBasis.Services.Implementation
         {
             var allExpences = _unitOfWork.ExpenseRepository.GetExpensesWithCategories();
 
-            var pagedExpenses = allExpences.OrderBy(c => c.DateCreated)
+            var sortedExpenses = allExpences.OrderBy(c => c.DateCreated)
                                         .Skip((pageNumber - 1) * pageSize)
                                         .Take(pageSize)
                                         .ToList();
-            return _mapper.Map<List<ExpenseDto>>(pagedExpenses);
+            return _mapper.Map<List<ExpenseDto>>(sortedExpenses);
         }
 
         public ExpenseDto GetExpenseById(int id)
@@ -55,17 +55,17 @@ namespace CashBasis.Services.Implementation
 
         public ExpenseDto UpdateExpense(int id, ExpenseDto item)
         {
-            var entityExpenseCategory = _mapper.Map<Expense>(item);
-            var existingExpenseCategory = _unitOfWork.ExpenseCategoryRepository.FindById(entityExpenseCategory.ExpenseCategoryId);
+            var entityExpense = _mapper.Map<Expense>(item);
+            var existingExpense = _unitOfWork.ExpenseRepository.FindById(entityExpense.ExpenseId);
 
-            if (existingExpenseCategory != null)
+            if (existingExpense != null)
             {
-                var newExpenseCategory = _unitOfWork.ExpenseCategoryRepository.Update(id, entityExpenseCategory);
-                return _mapper.Map<ExpenseCategoryDto>(newExpenseCategory);
+                var newExpense = _unitOfWork.ExpenseRepository.Update(id, entityExpense);
+                return _mapper.Map<ExpenseDto>(newExpense);
             }
             else
             {
-                return CreateExpenseCategory(item);
+                return CreateExpense(item);
             }
         }
     }

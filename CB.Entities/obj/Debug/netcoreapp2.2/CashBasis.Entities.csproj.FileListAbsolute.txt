@@ -6,3 +6,4 @@ E:\Proekti\CashBasis\CashBasis\CB.Entities\obj\Debug\netcoreapp2.2\CashBasis.Ent
 E:\Proekti\CashBasis\CashBasis\CB.Entities\obj\Debug\netcoreapp2.2\CashBasis.Entities.AssemblyInfo.cs
 E:\Proekti\CashBasis\CashBasis\CB.Entities\obj\Debug\netcoreapp2.2\CashBasis.Entities.dll
 E:\Proekti\CashBasis\CashBasis\CB.Entities\obj\Debug\netcoreapp2.2\CashBasis.Entities.pdb
+E:\Proekti\CashBasis\CashBasis\CB.Entities\obj\Debug\netcoreapp2.2\CashBasis.Entities.csprojAssemblyReference.cache

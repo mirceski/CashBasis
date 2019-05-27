@@ -25,12 +25,12 @@ namespace CashBasis.Services.Implementation
         public async Task<List<BillDto>> GetAllBills(int pageNumber, int pageSize = 15)
         {
             var allBills = _unitOfWork.BillRepository.GetAllBillsWithRelatedEntities();
-            var orderedBills = await allBills.OrderBy(c => c.DueDate)
+            var sortedBills = await allBills.OrderBy(c => c.DueDate)
                                         .Skip((pageNumber - 1) * pageSize)
                                         .Take(pageSize)
                                         .ToListAsync();
 
-            return _mapper.Map<List<BillDto>>(orderedBills);
+            return _mapper.Map<List<BillDto>>(sortedBills);
         }
 
         public BillDto GetBillById(int id)

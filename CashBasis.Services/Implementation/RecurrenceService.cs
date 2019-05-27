@@ -1,10 +1,11 @@
 ﻿using AutoMapper;
 using CashBasis.BusinessModel.Dtos;
 using CashBasis.DAL.Interfaces;
+using CashBasis.Entities;
 using CashBasis.Services.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 
 namespace CashBasis.Services.Implementation
 {
@@ -21,27 +22,46 @@ namespace CashBasis.Services.Implementation
 
         public RecurrenceDto CreateRecurrence(RecurrenceDto item)
         {
-            throw new NotImplementedException();
+            var entityReccurence = _mapper.Map<Recurrence>(item);
+
+            var newRecurrenceItem = _unitOfWork.RecurrenceRepository.Add(entityReccurence);
+            _unitOfWork.Commit();
+
+            return _mapper.Map<RecurrenceDto>(newRecurrenceItem);
         }
 
-        public List<RecurrenceDto> GetAllRecurrences(int pageNumber, int pageSize = 10)
+        public List<RecurrenceDto> GetAllRecurrences()
         {
-            throw new NotImplementedException();
+            var allRecurrences = _unitOfWork.RecurrenceRepository.GetAll().ToList();
+            return _mapper.Map<List<RecurrenceDto>>(allRecurrences);
         }
 
         public RecurrenceDto GetRecurrenceById(int id)
         {
-            throw new NotImplementedException();
+            var recurrence = _unitOfWork.RecurrenceRepository.FindById(id);
+            return _mapper.Map<RecurrenceDto>(recurrence);
         }
 
         public void RemoveRecurrence(int id)
         {
-            throw new NotImplementedException();
+            _unitOfWork.RecurrenceRepository.Delete(id);
+            _unitOfWork.Commit();
         }
 
         public RecurrenceDto UpdateRecurrence(int id, RecurrenceDto item)
         {
-            throw new NotImplementedException();
+            var entityRecurrence = _mapper.Map<Recurrence>(item);
+            var existingRecurrence = _unitOfWork.RecurrenceRepository.FindById(entityRecurrence.RecurrenceId);
+
+            if (existingRecurrence != null)
+            {
+                var newRecurrence = _unitOfWork.RecurrenceRepository.Update(id, existingRecurrence);
+                return _mapper.Map<RecurrenceDto>(newRecurrence);
+            }
+            else
+            {
+                return CreateRecurrence(item);
+            }
         }
     }
 }

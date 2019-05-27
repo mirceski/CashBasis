@@ -7,7 +7,7 @@ namespace CashBasis.Services.Interfaces
 {
     public interface IRecurrenceService
     {
-        List<RecurrenceDto> GetAllRecurrences(int pageNumber, int pageSize = 10);
+        List<RecurrenceDto> GetAllRecurrences();
         RecurrenceDto GetRecurrenceById(int id);
         RecurrenceDto CreateRecurrence(RecurrenceDto item);
         RecurrenceDto UpdateRecurrence(int id, RecurrenceDto item);

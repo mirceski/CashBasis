@@ -11,6 +11,7 @@ namespace CashBasis.Entities
         public string Company { get; set; }
         public decimal NetAmount { get; set; }
         public DateTime? StartDate { get; set; }
+        public DateTime? EndtDate { get; set; }
 
         public Recurrence Recurrence { get; set; }
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CashBasis.DAL.Implementation
 {
-    class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         public CBContext _context;
         public IBillItemRepository BillItemRepository { get; private set; }

@@ -1,9 +1,0 @@
-E:\Proekti\CashBasis\CashBasis\CashBasis.BusinessModel\bin\Debug\netcoreapp2.2\CashBasis.BusinessModel.deps.json
-E:\Proekti\CashBasis\CashBasis\CashBasis.BusinessModel\bin\Debug\netcoreapp2.2\CashBasis.BusinessModel.dll
-E:\Proekti\CashBasis\CashBasis\CashBasis.BusinessModel\bin\Debug\netcoreapp2.2\CashBasis.BusinessModel.pdb
-E:\Proekti\CashBasis\CashBasis\CashBasis.BusinessModel\obj\Debug\netcoreapp2.2\CashBasis.BusinessModel.csproj.CoreCompileInputs.cache
-E:\Proekti\CashBasis\CashBasis\CashBasis.BusinessModel\obj\Debug\netcoreapp2.2\CashBasis.BusinessModel.AssemblyInfoInputs.cache
-E:\Proekti\CashBasis\CashBasis\CashBasis.BusinessModel\obj\Debug\netcoreapp2.2\CashBasis.BusinessModel.AssemblyInfo.cs
-E:\Proekti\CashBasis\CashBasis\CashBasis.BusinessModel\obj\Debug\netcoreapp2.2\CashBasis.BusinessModel.dll
-E:\Proekti\CashBasis\CashBasis\CashBasis.BusinessModel\obj\Debug\netcoreapp2.2\CashBasis.BusinessModel.pdb
-E:\Proekti\CashBasis\CashBasis\CashBasis.BusinessModel\obj\Debug\netcoreapp2.2\CashBasis.BusinessModel.csprojAssemblyReference.cache

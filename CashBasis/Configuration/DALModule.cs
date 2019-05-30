@@ -17,11 +17,11 @@ namespace CashBasis.Configuration
             containerBuilder.RegisterAssemblyTypes(Assembly.Load("CashBasis.DAL"))
                    .Where(t => t.Name.EndsWith("Repository"))
                    .AsImplementedInterfaces()
-                   .InstancePerRequest();
+                   .InstancePerLifetimeScope();
 
             containerBuilder.RegisterType<UnitOfWork>()
                          .As<IUnitOfWork>()
-                         .InstancePerRequest();
+                         .InstancePerLifetimeScope();
         }
     }
 }

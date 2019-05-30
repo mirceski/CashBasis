@@ -13,9 +13,9 @@ namespace CashBasis.Configuration
         protected override void Load(ContainerBuilder containerBuilder)
         {
             containerBuilder.RegisterAssemblyTypes(Assembly.Load("CashBasis.Services"))
-                   .Where(t => t.Name.EndsWith("Service") || t.Name.EndsWith("Implementation"))
+                   .Where(t => t.Name.EndsWith("Service"))
                    .AsImplementedInterfaces()
-                   .InstancePerRequest();
+                   .InstancePerLifetimeScope();
         }
     }
 }

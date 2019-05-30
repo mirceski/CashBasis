@@ -16,7 +16,9 @@ namespace CashBasis.Services.Mappings
             CreateMap<BillItem, BillItemsDto>();
             CreateMap<BillItemsDto, BillItem>();
             CreateMap<ExpenseCategory, ExpenseCategoryDto>();
-            CreateMap<ExpenseCategoryDto, ExpenseCategory>();
+            CreateMap<ExpenseCategoryDto, ExpenseCategory>()
+                .ForMember(x => x.Bill, opt => opt.Ignore())
+                .ForMember(x => x.Expense, opt => opt.Ignore());
             CreateMap<Expense, ExpenseDto>();
             CreateMap<ExpenseDto, Expense>();
             CreateMap<Income, IncomeDto>();

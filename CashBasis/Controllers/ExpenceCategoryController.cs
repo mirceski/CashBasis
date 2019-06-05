@@ -18,35 +18,35 @@ namespace CashBasis.Controllers
         }
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<ExpenseCategoryDto>> Get()
+        public ActionResult<IEnumerable<ExpenseCategoryDto>> GetExpenseCategories()
         {
             return _expenseCategoryService.GetAllExpenseCategories();
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<ExpenseCategoryDto> Get(int id)
+        public ActionResult<ExpenseCategoryDto> GetExpenseCategoryById(int id)
         {
             return _expenseCategoryService.GetExpenseCategoryById(id);
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] ExpenseCategoryDto item)
+        public void CreateExpenseCategory([FromBody] ExpenseCategoryDto item)
         {
             _expenseCategoryService.CreateExpenseCategory(item);
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] ExpenseCategoryDto item)
+        public void UpdateExpenseCategory(int id, [FromBody] ExpenseCategoryDto item)
         {
             _expenseCategoryService.UpdateExpenseCategory(id, item);
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void DeleteExpenseCategory(int id)
         {
             _expenseCategoryService.RemoveExpenseCategory(id);
         }

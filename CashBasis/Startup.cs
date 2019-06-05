@@ -47,8 +47,8 @@ namespace CashBasis
             {
                 c.SwaggerDoc("v1", new Info { Title = "CashBasis API", Version = "v1" });
             });
-
-            services.AddAutoMapper(typeof(ServicesMapping).GetType().Assembly);
+            
+            services.AddAutoMapper(typeof(ServicesMapping));
             
             var builder = new ContainerBuilder();
             
@@ -60,7 +60,7 @@ namespace CashBasis
 
             builder.RegisterAssemblyTypes(typeof(BaseController).GetTypeInfo().Assembly)
                 .Where(t => typeof(Controller).IsAssignableFrom(t) &&
-                        t.Name.EndsWith("Controller", StringComparison.Ordinal)).PropertiesAutowired();
+                        t.Name.EndsWith("Controller", StringComparison.Ordinal));
 
             //builder.RegisterType<ExpenseCategoryService>().As<IExpenseCategoryService>();
 

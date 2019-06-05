@@ -35,7 +35,7 @@ namespace CashBasis.Services.Implementation
 
         public BillDto GetBillById(int id)
         {
-            var existingBill = _unitOfWork.BillRepository.FindById(id);
+            var existingBill = _unitOfWork.BillRepository.GetBillWithRelatedEntitiesById(id);
             return _mapper.Map<BillDto>(existingBill);
         }
 

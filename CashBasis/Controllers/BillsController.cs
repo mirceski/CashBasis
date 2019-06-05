@@ -19,35 +19,35 @@ namespace CashBasis.Controllers
         // GET api/values
         [HttpGet]
         //[Route("api/[controller]/[action]")]
-        public async Task<ActionResult<IEnumerable<BillDto>>> Get(int pageNumber, int pageSize)
+        public async Task<ActionResult<IEnumerable<BillDto>>> GetBills(int pageNumber, int pageSize)
         {
             return await _billService.GetAllBills(pageNumber, pageSize);
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<BillDto> Get(int id)
+        public ActionResult<BillDto> GetBillById(int id)
         {
             return _billService.GetBillById(id);
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] BillDto item)
+        public void CreateBill([FromBody] BillDto item)
         {
             _billService.CreateBill(item);
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public async Task Put(int id, [FromBody] BillDto item)
+        public async Task UpdateBill(int id, [FromBody] BillDto item)
         {
             await _billService.UpdateBill(id, item);
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void DeleteBill(int id)
         {
             _billService.RemoveBill(id);
         }

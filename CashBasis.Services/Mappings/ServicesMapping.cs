@@ -14,17 +14,20 @@ namespace CashBasis.Services.Mappings
             CreateMap<Bill, BillDto>();
             CreateMap<BillDto, Bill>();
             CreateMap<BillItem, BillItemsDto>();
-            CreateMap<BillItemsDto, BillItem>();
-            CreateMap<ExpenseCategory, ExpenseCategoryDto>();
+            CreateMap<BillItemsDto, BillItem>()
+                .ForMember(x => x.Bill, opt => opt.Ignore());
             CreateMap<ExpenseCategoryDto, ExpenseCategory>()
                 .ForMember(x => x.Bill, opt => opt.Ignore())
                 .ForMember(x => x.Expense, opt => opt.Ignore());
+            CreateMap<ExpenseCategory, ExpenseCategoryDto>();
             CreateMap<Expense, ExpenseDto>();
             CreateMap<ExpenseDto, Expense>();
             CreateMap<Income, IncomeDto>();
             CreateMap<IncomeDto, Income>();
             CreateMap<Recurrence, RecurrenceDto>();
-            CreateMap<RecurrenceDto, Recurrence>();
+            CreateMap<RecurrenceDto, Recurrence>()
+                .ForMember(x => x.Bill, opt => opt.Ignore())
+                .ForMember(x => x.Income, opt => opt.Ignore()); ;
         }
     }
 }

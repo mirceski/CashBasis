@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace CashBasis.DAL.Interfaces
 {
@@ -14,10 +15,10 @@ namespace CashBasis.DAL.Interfaces
             _context = context;
             _dbSet = _context.Set<BillItem>();
         }
-
-        public BillItem DeleteByBillId(int Id)
+        
+        public async Task<BillItem> DeleteByBillId(int Id)
         {
-            var entity = FindById(Id);
+            var entity = await _dbSet.SingleOrDefaultAsync(x => x.BillId == Id);
             if (entity != null)
             {
                 _dbSet.Remove(entity);

@@ -39,67 +39,51 @@ namespace CashBasis.Services.Implementation
             return _mapper.Map<BillDto>(existingBill);
         }
 
-        public async Task<BillDto> CreateBill(BillDto item)
+        public BillCreateUpdateDto CreateBill(BillCreateUpdateDto item)
         {
             var entityBill = _mapper.Map<Bill>(item);
             
             var newBillItem = _unitOfWork.BillRepository.Add(entityBill);
-            await _unitOfWork.CommitAsync();
+            _unitOfWork.Commit();
             
-            if (item.BillItems != null && item.BillItems.Any())
-            {
-                foreach (var billItem in item.BillItems)
-                {
-                    var billItemEntity = _mapper.Map<BillItem>(billItem);
-                    _unitOfWork.BillItemRepository.Add(billItemEntity);
-                    await _unitOfWork.CommitAsync();
-                }
-            }
-            return _mapper.Map<BillDto>(newBillItem);
+            return _mapper.Map<BillCreateUpdateDto>(newBillItem);
         }
 
-        public async Task<BillDto> UpdateBill(int id, BillDto item)
+        public BillItemsDto CreateBillItem(BillItemsDto item)
+        {
+            var entityBillItem = _mapper.Map<BillItem>(item);
+            
+            var newBillItem = _unitOfWork.BillItemRepository.Add(entityBillItem);
+            _unitOfWork.Commit();
+
+            return _mapper.Map<BillItemsDto>(newBillItem);
+        }
+
+        public BillItemsDto UpdateBillItem(int billItemId, BillItemsDto item)
+        {
+            var entityBillItem = _mapper.Map<BillItem>(item);
+
+            var existingBillItem = _unitOfWork.BillItemRepository.FindById(billItemId);
+
+            BillItemsDto updatedBillItem = null;
+            if (existingBillItem != null)
+            {
+                _unitOfWork.BillItemRepository.Update(billItemId, entityBillItem);
+                _unitOfWork.Commit();
+                return _mapper.Map<BillItemsDto>(updatedBillItem);
+            }
+            return null;
+        }
+
+        public BillCreateUpdateDto UpdateBill(int id, BillCreateUpdateDto item)
         {
             var entityBill = _mapper.Map<Bill>(item);
-            var existingBill = _unitOfWork.BillRepository.GetBillWithRelatedEntitiesById(item.BillId);
-            
-            if (existingBill != null)
-            {
-                var newBill = _unitOfWork.BillRepository.Update(id, entityBill);
-                
-                foreach (var billItem in existingBill.BillItems.ToList())
-                {
-                    if (!item.BillItems.Any(x => x.BillItemId == billItem.BillItemId))
-                    {
-                        _unitOfWork.BillItemRepository.Delete(billItem.BillItemId);
-                    }
-                }
 
-                foreach (var billItem in item.BillItems)
-                {
-                    var existingBillItem = existingBill.BillItems
-                        .Where(x => x.BillItemId == billItem.BillItemId).SingleOrDefault();
+            entityBill.BillId = id;
+            var updatedBill = _unitOfWork.BillRepository.Update(id, entityBill);
+            _unitOfWork.Commit();
 
-                    var entityBillItem = _mapper.Map<BillItem>(billItem);
-
-                    if (existingBillItem != null)
-                    {
-                        _unitOfWork.BillItemRepository.Update(existingBillItem.BillItemId, entityBillItem);
-                    }
-                    else
-                    {
-                        _unitOfWork.BillItemRepository.Add(entityBillItem);
-                    }
-                }
-
-                await _unitOfWork.CommitAsync();
-                return _mapper.Map<BillDto>(newBill);
-            }
-            else
-            {
-                return await CreateBill(item);
-            }
-            
+            return _mapper.Map<BillCreateUpdateDto>(updatedBill);
         }
 
         public void RemoveBill(int id)

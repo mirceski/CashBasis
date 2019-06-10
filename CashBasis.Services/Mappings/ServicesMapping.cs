@@ -13,6 +13,8 @@ namespace CashBasis.Services.Mappings
         {
             CreateMap<Bill, BillDto>();
             CreateMap<BillDto, Bill>();
+            CreateMap<Bill, BillCreateUpdateDto>();
+            CreateMap<BillCreateUpdateDto, Bill>();
             CreateMap<BillItem, BillItemsDto>();
             CreateMap<BillItemsDto, BillItem>()
                 .ForMember(x => x.Bill, opt => opt.Ignore());

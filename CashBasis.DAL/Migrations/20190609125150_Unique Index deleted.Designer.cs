@@ -4,14 +4,16 @@ using CashBasis.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CashBasis.DAL.Migrations
 {
     [DbContext(typeof(CBContext))]
-    partial class CBContextModelSnapshot : ModelSnapshot
+    [Migration("20190609125150_Unique Index deleted")]
+    partial class UniqueIndexdeleted
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

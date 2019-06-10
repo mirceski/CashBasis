@@ -49,7 +49,8 @@ namespace CashBasis
             });
             
             services.AddAutoMapper(typeof(ServicesMapping));
-            
+            services.AddCors();
+
             var builder = new ContainerBuilder();
             
             builder.Populate(services);
@@ -87,6 +88,11 @@ namespace CashBasis
             });
 
             app.UseMvc();
+
+            app.UseCors(options =>
+                options.WithOrigins("http://localhost:4200")
+                .AllowAnyMethod()
+                .AllowAnyHeader());
         }
     }
 }

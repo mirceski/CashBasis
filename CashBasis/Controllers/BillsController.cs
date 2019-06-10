@@ -33,16 +33,27 @@ namespace CashBasis.Controllers
 
         // POST api/values
         [HttpPost]
-        public void CreateBill([FromBody] BillDto item)
+        public void CreateBill([FromBody] BillCreateUpdateDto item)
         {
             _billService.CreateBill(item);
         }
-
+        // POST api/values
+        [HttpPost]
+        public void AddBillItem([FromBody] BillItemsDto item)
+        {
+            _billService.CreateBillItem(item);
+        }
         // PUT api/values/5
         [HttpPut("{id}")]
-        public async Task UpdateBill(int id, [FromBody] BillDto item)
+        public void UpdateBillItem(int id, [FromBody] BillItemsDto item)
         {
-            await _billService.UpdateBill(id, item);
+            _billService.UpdateBillItem(id, item);
+        }
+        // PUT api/values/5
+        [HttpPut("{id}")]
+        public void UpdateBill(int id, [FromBody] BillCreateUpdateDto item)
+        {
+            _billService.UpdateBill(id, item);
         }
 
         // DELETE api/values/5

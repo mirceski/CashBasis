@@ -2,11 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace CashBasis.DAL.Interfaces
 {
     public interface IBillItemRepository : IBaseRepository<BillItem>
     {
-        BillItem DeleteByBillId(int Id);
+        Task<BillItem> DeleteByBillId(int Id);
     }
 }

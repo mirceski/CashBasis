@@ -5,8 +5,9 @@ using System.Text;
 
 namespace CashBasis.BusinessModel.Dtos
 {
-    public class BillDto
+    public class BillCreateUpdateDto
     {
+        [JsonIgnore]
         public int BillId { get; set; }
         public string Description { get; set; }
         public string Vendor { get; set; }
@@ -15,9 +16,5 @@ namespace CashBasis.BusinessModel.Dtos
         public DateTime? DueDate { get; set; }
         public decimal TotalAmount { get; set; }
         public DateTime? DateCreated { get; set; }
-        
-        public ExpenseCategoryDto Category { get; set; }
-        public RecurrenceDto Recurrence { get; set; }
-        public List<BillItemsDto> BillItems { get; set; }
     }
 }

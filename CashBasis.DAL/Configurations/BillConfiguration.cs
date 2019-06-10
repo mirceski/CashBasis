@@ -42,6 +42,9 @@ namespace CashBasis.DAL.Configurations
                 .WithOne(d => d.Bill)
                 .HasForeignKey<Bill>(e => e.RecurrenceId)
                 .HasConstraintName("FK_Bill_Recurrence");
+
+            builder.HasIndex(x => x.CategoryId).IsUnique(false);
+            builder.HasIndex(x => x.RecurrenceId).IsUnique(false);
         }
     }
 }

@@ -10,8 +10,10 @@ namespace CashBasis.Services.Interfaces
     {
         Task<List<BillDto>> GetAllBills(int pageNumber, int pageSize = 15);
         BillDto GetBillById(int id);
-        Task<BillDto> CreateBill(BillDto item);
-        Task<BillDto> UpdateBill(int id, BillDto item);
+        BillCreateUpdateDto CreateBill(BillCreateUpdateDto item);
+        BillItemsDto CreateBillItem(BillItemsDto item);
+        BillItemsDto UpdateBillItem(int billItemId, BillItemsDto item);
+        BillCreateUpdateDto UpdateBill(int id, BillCreateUpdateDto item);
         void RemoveBill(int id);
     }
 }

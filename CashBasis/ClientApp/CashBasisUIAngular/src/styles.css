@@ -1,1 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+
+.logo {
+    height: 50px;
+    width: auto;
+    padding-right: 10px
+}

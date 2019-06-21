@@ -21,17 +21,18 @@
             "aot": false,
             "assets": [
               "src/assets/img/CashBasisIco.ico",
-              "src/assets",
+              "src/assets/scripts.js",
               "src/assets/img"
             ],
             "styles": [
-              "src/styles.css",
+              "src/assets/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/font-awesome/css/font-awesome.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "src/assets/scripts.js"
             ]
           },
           "configurations": {

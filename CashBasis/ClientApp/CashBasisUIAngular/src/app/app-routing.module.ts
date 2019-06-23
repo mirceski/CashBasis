@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { RecurrencesComponent} from  'src/app/components/recurrences/recurrences.component'
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'recurrences', component: RecurrencesComponent }
 ];
 

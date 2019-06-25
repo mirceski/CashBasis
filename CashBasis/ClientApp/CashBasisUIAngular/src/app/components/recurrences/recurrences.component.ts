@@ -16,7 +16,5 @@ export class RecurrencesComponent implements OnInit {
   ngOnInit() {
     this.recurrenceService.getRecurences()
       .subscribe(data => this.recurrences = data);
-      console.log(this.recurrences);
   }
-
 }

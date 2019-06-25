@@ -7,15 +7,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class RecurreceService {
-  recurrencesEndPoint: "http://localhost:51148/api/Recurrences/";
-
-  constructor(private http: HttpClient) { }
+  
+  readonly recurrencesEndPoint: string = "http://localhost:51148/api/Recurrences/";
 
   httpOptions = {
     headers: new HttpHeaders({
     'Content-Type': 'application/json'
     })
     }
+
+    constructor(private http: HttpClient) { }
 
   getRecurences(): Observable<Recurrence[]>{
     return this.http.get<Recurrence[]>(this.recurrencesEndPoint + 'GetRecurrences');

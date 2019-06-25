@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { RecurrencesComponent } from './components/recurrences/recurrences.component';
+import { ExpenceCategoriesComponent } from './components/expence-categories/expence-categories.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
-    RecurrencesComponent
+    RecurrencesComponent,
+    ExpenceCategoriesComponent
   ],
   imports: [
     BrowserModule,

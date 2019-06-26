@@ -21,4 +21,20 @@ export class RecurreceService {
   getRecurences(): Observable<Recurrence[]>{
     return this.http.get<Recurrence[]>(this.recurrencesEndPoint + 'GetRecurrences');
   }
+
+  getRecurencesById(id: number): Observable<Recurrence>{
+    return this.http.get<Recurrence>(this.recurrencesEndPoint + 'GetRecurrenceById/' + id);
+  }
+
+  createRecurrence(recurrence: Recurrence) {
+    this.http.post<Recurrence>(this.recurrencesEndPoint + 'CreateRecurrence', recurrence);
+  }
+
+  updateRecurrence(id: number, recurrence: Recurrence) {
+    this.http.put<Recurrence>(this.recurrencesEndPoint + 'UpdateRecurrence/' + id, recurrence);
+  }
+
+  deleteRecurrence(id: number) {
+    this.http.delete<Recurrence>(this.recurrencesEndPoint + 'DeleteRecurrence/' + id);
+  }
 }
